@@ -61,30 +61,27 @@ reset.onclick = function (e) {
 soma.onclick = function (e) {
   operandoa = resultado.textContent;
   operacao = "+";
-  limpar();
+  resultado.textContent = operandoa + operacao;
 };
 subtracao.onclick = function (e) {
   operandoa = resultado.textContent;
   operacao = "-";
-  limpar();
+  resultado.textContent = operandoa + operacao;
 };
 divisao.onclick = function (e) {
   operandoa = resultado.textContent;
   operacao = "/";
-  limpar();
+  resultado.textContent = operandoa + operacao;
 };
 multiplicacao.onclick = function (e) {
   operandoa = resultado.textContent;
   operacao = "*";
-  limpar();
+  resultado.textContent = operandoa + operacao;
 };
 igual.onclick = function (e) {
-  operandob = resultado.textContent;
-  resolver();
+  resultado.textContent = eval(resultado.textContent);
 };
-function limpar() {
-  resultado.textContent = "";
-}
+
 function resetar() {
   resultado.textContent = "";
   operandoa = 0;
@@ -92,21 +89,6 @@ function resetar() {
   operacao = "";
 }
 function resolver() {
-  var res = 0;
-  switch (operacao) {
-    case "+":
-      res = parseFloat(operandoa) + parseFloat(operandob);
-      break;
-    case "-":
-      res = parseFloat(operandoa) - parseFloat(operandob);
-      break;
-    case "*":
-      res = parseFloat(operandoa) * parseFloat(operandob);
-      break;
-    case "/":
-      res = parseFloat(operandoa) / parseFloat(operandob);
-      break;
-  }
   resetar();
   resultado.textContent = res;
 }
